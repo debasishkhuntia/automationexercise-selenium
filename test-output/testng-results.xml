@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-01-12T23:12:15 IST" name="AutomationExercise Suite" finished-at="2026-01-12T23:14:00 IST" duration-ms="104573">
+    <groups>
+      <group name="regression">
+        <method signature="TC004_SignUp.signup()[pri:0, instance:testCases.TC004_SignUp@125290e5]" name="signup" class="testCases.TC004_SignUp"/>
+      </group> <!-- regression -->
+      <group name="sanity">
+        <method signature="TC001_LoginPage.verifyLogin()[pri:0, instance:testCases.TC001_LoginPage@1787bc24]" name="verifyLogin" class="testCases.TC001_LoginPage"/>
+        <method signature="TC003_LogedOut.verifyLogOut()[pri:0, instance:testCases.TC003_LogedOut@3b79fd76]" name="verifyLogOut" class="testCases.TC003_LogedOut"/>
+      </group> <!-- sanity -->
+    </groups>
+    <test started-at="2026-01-12T23:12:15 IST" name="Sanity Tests" finished-at="2026-01-12T23:13:50 IST" duration-ms="94664">
+      <class name="testCases.TC001_LoginPage">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC001_LoginPage@1787bc24]" started-at="2026-01-12T23:13:07 IST" name="setup" finished-at="2026-01-12T23:13:42 IST" duration-ms="34698" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[linux]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyLogin()[pri:0, instance:testCases.TC001_LoginPage@1787bc24]" started-at="2026-01-12T23:13:42 IST" name="verifyLogin" finished-at="2026-01-12T23:13:50 IST" duration-ms="7718" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC001_LoginPage@1787bc24]" started-at="2026-01-12T23:13:50 IST" name="tearDown" finished-at="2026-01-12T23:13:50 IST" duration-ms="90" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.TC001_LoginPage -->
+      <class name="testCases.TC003_LogedOut">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC003_LogedOut@3b79fd76]" started-at="2026-01-12T23:12:15 IST" name="setup" finished-at="2026-01-12T23:12:54 IST" duration-ms="38683" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[linux]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyLogOut()[pri:0, instance:testCases.TC003_LogedOut@3b79fd76]" started-at="2026-01-12T23:12:54 IST" name="verifyLogOut" finished-at="2026-01-12T23:13:07 IST" duration-ms="13346" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogOut -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC003_LogedOut@3b79fd76]" started-at="2026-01-12T23:13:07 IST" name="tearDown" finished-at="2026-01-12T23:13:07 IST" duration-ms="90" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.TC003_LogedOut -->
+    </test> <!-- Sanity Tests -->
+    <test started-at="2026-01-12T23:13:50 IST" name="Regression Tests" finished-at="2026-01-12T23:14:00 IST" duration-ms="9867">
+      <class name="testCases.TC004_SignUp">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC004_SignUp@125290e5]" started-at="2026-01-12T23:13:50 IST" name="setup" finished-at="2026-01-12T23:13:57 IST" duration-ms="6866" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[linux]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="signup()[pri:0, instance:testCases.TC004_SignUp@125290e5]" started-at="2026-01-12T23:13:57 IST" name="signup" finished-at="2026-01-12T23:13:59 IST" duration-ms="2915" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signup -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC004_SignUp@125290e5]" started-at="2026-01-12T23:13:59 IST" name="tearDown" finished-at="2026-01-12T23:14:00 IST" duration-ms="83" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testCases.TC004_SignUp -->
+    </test> <!-- Regression Tests -->
+  </suite> <!-- AutomationExercise Suite -->
+</testng-results>

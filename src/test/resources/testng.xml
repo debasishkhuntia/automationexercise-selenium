@@ -1,0 +1,41 @@
+<suite name="AutomationExercise Suite" parallel="classes" thread-count="1">
+        <!-- ================= SANITY ================= -->
+    <test name="Sanity Tests">
+    
+     <parameter name="browser" value="chrome"/>
+     <parameter name="platform" value="linux"/>
+        <groups>
+            <run>
+                <include name="sanity"/>
+            </run>
+        </groups>
+
+        
+        <classes>
+        
+             <class name="testCases.TC003_LogedOut"/>
+            <class name="testCases.TC001_LoginPage"/>
+        </classes>
+    </test>
+
+    <!-- ================= REGRESSION ================= -->
+
+     <test name="Regression Tests">
+     <parameter name="browser" value="chrome"/>
+     <parameter name="platform" value="linux"/>
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+
+        
+        <classes>
+        
+            <class name="testCases.TC004_SignUp"/>
+    
+        </classes>
+    </test>
+    
+
+</suite>
