@@ -18,7 +18,7 @@ public class TC001_LoginPage extends BaseTest {
 			
 			HP.clkloginSignup();
 			
-			
+			logger.info("Click on Login Paage!!");
 			LoginPage LP= new LoginPage(driver);
 			System.out.println(LP.txtLogin());
 			LP.enterEmail("jan123@gmail.com");
@@ -26,6 +26,7 @@ public class TC001_LoginPage extends BaseTest {
 			LP.clkButton();
 			System.out.println("Login Successfully Done");
 			//
+			logger.info("Click on Login Paage Successfull!!");
 		} 
 		
 		catch(Exception e)

@@ -1,9 +1,13 @@
 package pageObject;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BaseClass{
 
@@ -17,7 +21,7 @@ public class HomePage extends BaseClass{
 	
 	// Locators
 	
-	@FindBy(xpath="//a[normalize-space()='Signup / Login']")
+	@FindBy(xpath="//a[@href='/login']")
 	WebElement clkLoginSignup;
 	
 	
@@ -47,7 +51,9 @@ public class HomePage extends BaseClass{
 	
 	public void clkloginSignup()
 	{
-		clkLoginSignup.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.elementToBeClickable(clkLoginSignup));
+	    clkLoginSignup.click();
 	}
 	public void clkContactUs()
 	{

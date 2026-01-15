@@ -13,7 +13,7 @@ public class TC004_SignUp  extends BaseTest{
 		try {
 			//Entering to Home Page on Page Object class
 			HomePage HP=new HomePage(driver); 
-			
+			logger.info("Click on Sign Up");
 			HP.clkloginSignup();
 			 String homeTitle = driver.getTitle();
 		    Assert.assertEquals(homeTitle, "Automation Exercise - Signup / Login");
@@ -21,12 +21,12 @@ public class TC004_SignUp  extends BaseTest{
 		     SignUpPage SP= new SignUpPage(driver);
 		     
 		     System.out.println(SP.getNewUserSignupHeaderText());
-		     
+		 	logger.info("Enter SignUp Details");
 		     SP.enterSignupName("deba");
 		     SP.enterSignupEmail("jan123@gmail.com");
 		     
 		     
-		     
+		     logger.info("SignUp Already Done!!");
 
 		     Assert.assertTrue(true, "Email Address already exist!");
 			
