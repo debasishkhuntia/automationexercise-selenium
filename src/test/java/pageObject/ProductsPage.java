@@ -48,7 +48,7 @@ public class ProductsPage extends HomePage{
     
     public void clickViewProductOfFirstProduct() {
     	
-         firstProductViewButton.click();;
+    	firstProductViewButton.click();;
     }
   
     

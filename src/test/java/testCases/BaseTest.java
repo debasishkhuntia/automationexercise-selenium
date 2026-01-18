@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -29,8 +30,9 @@ public class BaseTest {
 	 public  Properties properties;
 	
 	@Parameters({"browser","platform"})
-	 @BeforeClass(groups={"sanity","regression"})
-	public void setup(String browser,String platform) throws IOException
+	 @BeforeClass(groups={"sanity","regression","functional"})
+	public void setup( String browser,
+			          String platform) throws IOException
 	{ 
 		
 		//LOAD CONFIG PROPERTIES FILE
@@ -55,7 +57,18 @@ public class BaseTest {
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920,1080");
         options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-dev-shm-usage",
+        		 "--disable-ads",
+                 "--disable-popup-blocking",
+                 "--no-sandbox",
+                 "--disable-dev-shm-usage",
+                 "--disable-gpu",
+                 "--disable-extensions",
+                 "--disable-infobars",
+                 "--remote-allow-origins=*",
+                 "--window-size=1920,1080",
+                 "--disable-ads",
+                 "--disable-popup-blocking");
         //options
 		
 		//DesiredCapabilities  capabilities= new DesiredCapabilities();
@@ -86,20 +99,22 @@ public class BaseTest {
 		////REOMTE DRIVER
 		
 		else if(properties.getProperty("execution_env").equalsIgnoreCase("remote")) {	
-		
+			//removeAds(driver);
 	     if (browser.equalsIgnoreCase("chrome")) {
 
 	            ChromeOptions options1 = new ChromeOptions();
 	            options1.setPlatformName(platform); // linux
-	            options1.addArguments("--disable-gpu");
+	           options1.addArguments("--disable-gpu");
 	            options1.addArguments("--no-sandbox",
-	                    "--disable-dev-shm-usage",
-	                    "--disable-gpu",
-	                    "--disable-extensions",
-	                    "--disable-infobars",
-	                    "--remote-allow-origins=*",
-	                    "--window-size=1920,1080");
-	            options1.addArguments("--headless=new");
+	                   "--disable-dev-shm-usage",
+	                   "--disable-gpu",
+	                   "--disable-extensions",
+	                   "--disable-infobars",
+	                   "--remote-allow-origins=*",
+	                   "--window-size=1920,1080",
+	                   "--disable-ads",
+	                   "--disable-popup-blocking");
+	           options1.addArguments("--headless=new");
 
 	            driver = new RemoteWebDriver(
 	                    new URL("http://localhost:4444"),
@@ -142,7 +157,7 @@ public class BaseTest {
 	}
 	
 	 
-	@AfterClass(groups={"sanity","regression"})
+	@AfterClass(groups={"sanity","regression","functional"})
 	public void tearDown() throws InterruptedException
 	{
 		
@@ -152,6 +167,13 @@ public class BaseTest {
 		
 	}
 	
+	
+	public void removeAds(WebDriver driver) {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript(
+	    		 "document.querySelectorAll(\"iframe[id^='aswift'], iframe[src*='ads'], .adsbygoogle\").forEach(e => e.remove());"
+	    );
+	}
 
 
 }

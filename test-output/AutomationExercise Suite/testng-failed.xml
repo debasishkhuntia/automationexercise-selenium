@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="1" parallel="classes" name="Failed suite [AutomationExercise Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="1" parallel="classes" name="Sanity Tests(failed)">
+<suite thread-count="4" parallel="classes" name="Failed suite [AutomationExercise Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="4" parallel="classes" name="Functional Tests(failed)">
     <parameter name="browser" value="chrome"/>
     <parameter name="platform" value="linux"/>
     <groups>
       <run>
-        <include name="sanity"/>
+        <include name="functional"/>
       </run>
     </groups>
     <classes>
-      <class name="testCases.TC003_LogedOut">
+      <class name="testCases.TC0011_AddProductCarts">
         <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="verifyLogOut"/>
-        </methods>
-      </class> <!-- testCases.TC003_LogedOut -->
-      <class name="testCases.TC001_LoginPage">
-        <methods>
-          <include name="verifyLogin"/>
+          <include name="CartDetails"/>
           <include name="setup"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- testCases.TC001_LoginPage -->
+      </class> <!-- testCases.TC0011_AddProductCarts -->
+      <class name="testCases.TC012_AddProductToCart">
+        <methods>
+          <include name="verifyProductQuantityInCart"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testCases.TC012_AddProductToCart -->
     </classes>
-  </test> <!-- Sanity Tests(failed) -->
+  </test> <!-- Functional Tests(failed) -->
 </suite> <!-- Failed suite [AutomationExercise Suite] -->
